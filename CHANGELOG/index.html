@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ibm.github.io/Ansible-OpenShift-Provisioning/CHANGELOG/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Change Log - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Change Log";
+        var mkdocs_page_input_path = "CHANGELOG.md";
+        var mkdocs_page_url = "/Ansible-OpenShift-Provisioning/CHANGELOG/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/ansible-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Read Me</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../before-you-begin/">Before You Begin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../prerequisites/">Prerequisites</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../vault-and-tags/">Vault and Tags</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation Instructions</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../get-the-repository/">1 Get the repository</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../get-pull-secret/">2 Get Pull Secret</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../set-variables/">3 Set Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run-setup-playbook/">4 Run Setup Playbook</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run-the-playbooks/">5 Run the Playbooks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../first-time-login/">6 First-Time Login</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="#">Troubleshooting and Teardown</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../teardown/">Teardown</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Change Log</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#roadmap">Roadmap</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#documentation-overhaul">Documentation Overhaul</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary">Summary</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#automated-kvm-host-provisioning">Automated KVM Host Provisioning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_1">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#added">Added</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modified">Modified</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#infrastructure-nodes-extra-apps-security">Infrastructure Nodes, Extra Apps, Security</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_2">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#added_1">Added</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modified_1">Modified</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removed">Removed</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#scaling">Scaling</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_3">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#added_2">Added</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modified_2">Modified</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#automated-ocp-verification">Automated OCP Verification</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_4">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#added_3">Added</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modified_3">Modified</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removed_1">Removed</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#automated-bastion-install">Automated Bastion Install</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#summary_5">Summary</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#added_4">Added</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#modified_4">Modified</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#removed_2">Removed</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#first-working-build">First Working Build</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#initial-commit">Initial Commit</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgements/">Acknowledgements</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Misc &raquo;</li><li>Change Log</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/CHANGELOG.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">#</a></h1>
+<p>All notable changes to this project will be documented in this file.  </p>
+<h2 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">#</a></h2>
+<ul>
+<li>Add option to use a VPN to reduce # of IPs needed</li>
+<li>Add the ability to provision multiple LPARs for high availability</li>
+<li>Tag infrastructure nodes for specific operators</li>
+<li>Add air-gapped (disconnected) install option</li>
+<li>Add option for OpenShift to use a proxy server</li>
+<li>Add README’s for each role</li>
+<li>Make ssh-copy-id role idempotent</li>
+</ul>
+<h2 id="documentation-overhaul">Documentation Overhaul<a class="headerlink" href="#documentation-overhaul" title="Permanent link">#</a></h2>
+<p>Version 0.3.1<br />
+Released: 2022-06-03</p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h3>
+<ul>
+<li>Moved documentation to GitHub Pages to be more reader-friendly.</li>
+</ul>
+<h2 id="automated-kvm-host-provisioning">Automated KVM Host Provisioning<a class="headerlink" href="#automated-kvm-host-provisioning" title="Permanent link">#</a></h2>
+<p>Version 0.3.0<br />
+Released: 2022-03-26  </p>
+<h3 id="summary_1">Summary<a class="headerlink" href="#summary_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Now able to provision the KVM host via Ansible.</li>
+<li>Changed the structure of playbooks, variables, and inventories to use Ansible best practices.</li>
+</ul>
+<h3 id="added">Added<a class="headerlink" href="#added" title="Permanent link">#</a></h3>
+<ul>
+<li>Support for using IBM's zHMC Ansible modules to automate the creation of a logical partition (LPAR) profile, connect storage group and network card, boot from an FTP server, and then kickstart the installation of RHEL to serve as the KVM hypervisor for the cluster.</li>
+<li>Usage of Ansible vault to encrypt sensitive data. Playbooks must now be run with --ask-vault-pass, e.g. 'ansible-playbook playbooks/site.yaml --ask-vault-pass'</li>
+</ul>
+<h3 id="modified">Modified<a class="headerlink" href="#modified" title="Permanent link">#</a></h3>
+<ul>
+<li>Bastion boot method from cloud-init to FTP and kickstart.</li>
+<li>The structure of playbooks. The setup.yaml playbook still must be run before anything else, but now there is a master playbook - site.yaml which imports all other playbooks. This was done to be more user-friendly and in-line with best practices. Previously, everything was all in one playbook and relied on tags to start back from a given point. Relying solely on tags proved tedious.</li>
+<li>The structure for inventories, which allows for more flexibility with deployments and is more in-line with best practices. Now you can have multiple inventories and specify which you would like to use for a given run in the ansible.cfg file.</li>
+<li>The structure of variables, to allow for the separation of the bastion node from the rest of the cluster. This opens up many more possibilities for more complex deployments where, for example, the bastion node is already created.</li>
+</ul>
+<h2 id="infrastructure-nodes-extra-apps-security">Infrastructure Nodes, Extra Apps, Security<a class="headerlink" href="#infrastructure-nodes-extra-apps-security" title="Permanent link">#</a></h2>
+<p>Version: 0.2.1<br />
+Released: 2022-01-06  </p>
+<h3 id="summary_2">Summary<a class="headerlink" href="#summary_2" title="Permanent link">#</a></h3>
+<ul>
+<li>Now able to designate compute nodes as infrastructure nodes, and create optional RHEL VMs for additional non-cluster applications running on the KVM host.</li>
+<li>Made changes to SSH and SELinux tasks to be more secure.</li>
+</ul>
+<h3 id="added_1">Added<a class="headerlink" href="#added_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Support for creating infrastructure nodes and extra apps.</li>
+<li>Added tcp port 53 to firewall.</li>
+<li>Setting of permissions and ownership of important configuration files to bastion admin user instead of root.</li>
+<li>Wheel to groups that bastion admin user is added to on boot.</li>
+<li>More rounds of checking cluster operators and CSRs in verification steps to ensure the playbook doesn't fail if it takes a long time for those steps to complete.</li>
+<li>Task to httpd to allow port 4443 because SELinux is no longer set to permissive (see '<a href="###Removed">Removed</a>' below).</li>
+</ul>
+<h3 id="modified_1">Modified<a class="headerlink" href="#modified_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Formatting of README file to be prettier and more useful.</li>
+<li>env.yaml to have two sections separated by a comment block: one for variables that need to be filled out, the other for pre-filled variables that can be modified if desired.</li>
+<li>Ansible user from running as root to an admin user with sudo privileges.</li>
+</ul>
+<h3 id="removed">Removed<a class="headerlink" href="#removed" title="Permanent link">#</a></h3>
+<ul>
+<li>The need to run anything as root user for security reasons.</li>
+<li>set_selinux_permissive mode role for security reasons.</li>
+</ul>
+<h2 id="scaling">Scaling<a class="headerlink" href="#scaling" title="Permanent link">#</a></h2>
+<p>Version: 0.2.0<br />
+Released: 2021-12-09  </p>
+<h3 id="summary_3">Summary<a class="headerlink" href="#summary_3" title="Permanent link">#</a></h3>
+<ul>
+<li>Now supports any number of control and compute nodes to be provisioned in the cluster.</li>
+<li>This update heavily modifies the variable structure in env.yaml in order to make scaling work.</li>
+</ul>
+<h3 id="added_2">Added<a class="headerlink" href="#added_2" title="Permanent link">#</a></h3>
+<ul>
+<li>Support for scaling of control and compute nodes.</li>
+</ul>
+<h3 id="modified_2">Modified<a class="headerlink" href="#modified_2" title="Permanent link">#</a></h3>
+<ul>
+<li>Variable structure in env.yaml in order to support scaling.</li>
+<li>Tags to match their corresponding role.</li>
+<li>Every reference to a variable from env.yaml to match the new structure.</li>
+</ul>
+<h2 id="automated-ocp-verification">Automated OCP Verification<a class="headerlink" href="#automated-ocp-verification" title="Permanent link">#</a></h2>
+<p>Version: 0.1.1<br />
+Released: 2021-12-03  </p>
+<h3 id="summary_4">Summary<a class="headerlink" href="#summary_4" title="Permanent link">#</a></h3>
+<ul>
+<li>Fully automated all OCP verification steps. Cutting the number of steps nearly in half. The main playbook can now run completely hands-off from kicking it off all the way to an operational cluster. The last step provides the first-time login credentials.</li>
+</ul>
+<h3 id="added_3">Added<a class="headerlink" href="#added_3" title="Permanent link">#</a></h3>
+<ul>
+<li>5 roles related to automating OCP verification steps: wait_for_bootstrap, approve_certs, check_nodes, wait_for_cluster_operators, and wait_for_install_complete.</li>
+<li>Role to check internal and external DNS configuration before continuing. Including checking to make sure the name resolves to the correct IP address.</li>
+</ul>
+<h3 id="modified_3">Modified<a class="headerlink" href="#modified_3" title="Permanent link">#</a></h3>
+<ul>
+<li>The mirrors for CoreOS versions to update to 4.9 and tested them.</li>
+<li>The acquisition method of RHEL qcow2 from downloading via ephemeral link to having the user download the file to their local machine as a pre-req. This was changed to avoid having to re-copy the link every time it expires.</li>
+<li>teardown.yaml and reset_files role to be fully idempotent when running the main playbook from the point where each type of teardown sets the user back to.</li>
+<li>Lots of small tweaks.</li>
+</ul>
+<h3 id="removed_1">Removed<a class="headerlink" href="#removed_1" title="Permanent link">#</a></h3>
+<ul>
+<li>Instructions in README for doing OCP verification steps manually</li>
+</ul>
+<h2 id="automated-bastion-install">Automated Bastion Install<a class="headerlink" href="#automated-bastion-install" title="Permanent link">#</a></h2>
+<p>Version: 0.1.0<br />
+Released: 2021-11-24  </p>
+<h3 id="summary_5">Summary<a class="headerlink" href="#summary_5" title="Permanent link">#</a></h3>
+<ul>
+<li>Fully automated bastion installation and configuration using cloud-init</li>
+</ul>
+<h3 id="added_4">Added<a class="headerlink" href="#added_4" title="Permanent link">#</a></h3>
+<ul>
+<li>Options in env.yaml for creating a DNS server on the bastion or not, and for automatically attaching Red Hat subscriptions</li>
+<li>Variables for bootstrap, bastion, control and compute nodes' specifications in env.yaml</li>
+<li>Node name variables in env.yaml</li>
+<li>Variable for network interface name in env.yaml</li>
+<li>Variable for DNS forwarder in env.yaml</li>
+<li>Templating of DNS configuration files so they don't have to be pre-provided</li>
+<li>Expect script to ssh_copy_id role so that the user doesn't have to type in ssh password when copying ssh key</li>
+<li>Templating of haproxy config file</li>
+<li>A boot_teardown tag in teardown.yaml to automate the teardown of bootstrap node</li>
+</ul>
+<h3 id="modified_4">Modified<a class="headerlink" href="#modified_4" title="Permanent link">#</a></h3>
+<ul>
+<li>create_bastion role to use cloud-init to fully automate configuration and installation of the bastion node</li>
+<li>teardown.yaml script to decrease complexity and work faster.</li>
+<li>Some tags to match their corresponding role names</li>
+<li>Lots of small improvements and tweaks</li>
+</ul>
+<h3 id="removed_2">Removed<a class="headerlink" href="#removed_2" title="Permanent link">#</a></h3>
+<ul>
+<li>Encryption of env.yaml as it was unnecessary and increased complexity</li>
+</ul>
+<h2 id="first-working-build">First Working Build<a class="headerlink" href="#first-working-build" title="Permanent link">#</a></h2>
+<p>Version: 0.0.1
+Released: 2021-08-24  </p>
+<h2 id="initial-commit">Initial Commit<a class="headerlink" href="#initial-commit" title="Permanent link">#</a></h2>
+<p>Version: 0.0.0<br />
+Released: 2021-06-11  </p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../teardown/" class="btn btn-neutral float-left" title="Teardown"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../acknowledgements/" class="btn btn-neutral float-right" title="Acknowledgements">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright © 2022 IBM zSystems Washington Systems Center</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../teardown/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../acknowledgements/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

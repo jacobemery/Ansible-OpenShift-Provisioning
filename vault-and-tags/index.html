@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ibm.github.io/Ansible-OpenShift-Provisioning/vault-and-tags/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Vault and Tags - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Vault and Tags";
+        var mkdocs_page_input_path = "vault-and-tags.md";
+        var mkdocs_page_url = "/Ansible-OpenShift-Provisioning/vault-and-tags/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="..">
+          <img src="../images/ansible-logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Read Me</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../before-you-begin/">Before You Begin</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../prerequisites/">Prerequisites</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Vault and Tags</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#tags">Tags</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vault">Vault</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Installation Instructions</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../get-the-repository/">1 Get the repository</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../get-pull-secret/">2 Get Pull Secret</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../set-variables/">3 Set Variables</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run-setup-playbook/">4 Run Setup Playbook</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../run-the-playbooks/">5 Run the Playbooks</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../first-time-login/">6 First-Time Login</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Misc</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Troubleshooting and Teardown</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../teardown/">Teardown</a>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG/">Change Log</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../acknowledgements/">Acknowledgements</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Read Me &raquo;</li><li>Vault and Tags</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/vault-and-tags.md"
+          class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="vault-and-tags">Vault and Tags<a class="headerlink" href="#vault-and-tags" title="Permanent link">#</a></h1>
+<p>A quick note explaining how to use tags and Ansible Vault.</p>
+<h2 id="tags">Tags<a class="headerlink" href="#tags" title="Permanent link">#</a></h2>
+<ul>
+<li>To be more selective with what parts of a playbook are run, use tags. </li>
+<li>To determine what part of a playbook you would like to run, open the playbook you'd like to run and find the roles parameter. Each <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/tree/main/roles">role</a> has a corresponding tag.</li>
+<li>There are also occasionally tags for sections of a playbook or within the role themselves.</li>
+<li>This is especially helpful for troubleshooting. You can add in tags under the <code>name</code> parameter for individual tasks you'd like to run. </li>
+<li>Here's an example of using a tag:</li>
+</ul>
+<pre class="codehilite"><code>ansible-playbook playbooks/setup_kvm_host.yaml --tags &quot;section_2,section_3&quot;
+</code></pre>
+
+<ul>
+<li>This runs only the parts of the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/setup_kvm_host.yaml">setup_kvm_host playbook</a> marked with tags section_2 and section_3. To use more than one tag, they must be quoted (single or double) and comma-separated (with or without spaces between).</li>
+</ul>
+<h2 id="vault">Vault<a class="headerlink" href="#vault" title="Permanent link">#</a></h2>
+<ul>
+<li>For security purposes, the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/setup.yaml">setup playbook</a> transfers passwords and sensitive information entered into the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml">environment variables file</a> to the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/vault.yaml">Ansible Vault</a> and then encrypts them.</li>
+<li>To decrypt the Ansible Vault to view its contents, run the following command:</li>
+</ul>
+<pre class="codehilite"><code>ansible-playbook playbooks/vault.yaml --tags decrypt --ask-vault-pass
+</code></pre>
+
+<ul>
+<li>To encrypt the Ansible Vault to re-secure its contents, run the following command:</li>
+</ul>
+<pre class="codehilite"><code>ansible-playbook playbooks/vault.yaml --tags encrypt --ask-vault-pass
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../prerequisites/" class="btn btn-neutral float-left" title="Prerequisites"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../get-the-repository/" class="btn btn-neutral float-right" title="1 Get the repository">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright © 2022 IBM zSystems Washington Systems Center</p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../prerequisites/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../get-the-repository/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
