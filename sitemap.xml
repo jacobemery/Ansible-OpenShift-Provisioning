@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/CHANGELOG/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/acknowledgements/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/before-you-begin/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/first-time-login/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/get-pull-secret/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/get-the-repository/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/prerequisites/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/run-setup-playbook/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/run-the-playbooks/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/set-variables/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/teardown/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/troubleshooting/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://ibm.github.io/Ansible-OpenShift-Provisioning/vault-and-tags/</loc>
-         <lastmod>2022-06-04</lastmod>
+         <lastmod>2022-06-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
