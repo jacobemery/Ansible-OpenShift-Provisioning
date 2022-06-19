@@ -133,12 +133,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.cpc_name</strong></td>
-<td align="left">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC).</td>
+<td align="left">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC). Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">SYS1</td>
 </tr>
 <tr>
 <td align="left"><strong>env.z.hmc.host</strong></td>
-<td align="left">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL).</td>
+<td align="left">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL). Will be moved to vault.yaml and redacted during encrypt_vars role<br /> of setup.yaml playbook.</td>
 <td align="left">192.168.10.1</td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.hmc.pass</strong></td>
-<td align="left">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
+<td align="left">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">hmcPas$w0rd!</td>
 </tr>
 <tr>
@@ -168,12 +168,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.access.pass</strong></td>
-<td align="left">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
+<td align="left">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).<br /> Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">ch4ngeMe!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.root_pass</strong></td>
-<td align="left">The root password for RHEL installed on the LPAR (the KVM host).</td>
+<td align="left">The root password for RHEL installed on the LPAR (the KVM host). Will be moved to vault.yaml and<br /> redacted during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">$ecureP4ass!</td>
 </tr>
 <tr>
@@ -213,7 +213,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.networking.ip</strong></td>
-<td align="left">The IPv4 address of the LPAR with RHEL installed natively (the KVM host).</td>
+<td align="left">The IPv4 address of the LPAR with RHEL installed natively (the KVM host). Will be moved to vault.yaml and<br /> redacted during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">192.168.10.2</td>
 </tr>
 <tr>
@@ -232,8 +232,13 @@
 <td align="left">192.168.10.0</td>
 </tr>
 <tr>
-<td align="left"><strong>env.z.lpar.networking.nameserver</strong></td>
+<td align="left"><strong>env.z.lpar.networking.nameserver1</strong></td>
 <td align="left">The IPv4 address from which the KVM host gets its hostname resolved.</td>
+<td align="left">192.168.10.200</td>
+</tr>
+<tr>
+<td align="left"><strong>env.z.lpar.networking.nameserver2</strong></td>
+<td align="left">(Optional) A second IPv4 address from which the KVM host can get its hostname resolved. Used for high availability.</td>
 <td align="left">192.168.10.200</td>
 </tr>
 <tr>
@@ -308,7 +313,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.storage_group.dev_num</strong></td>
-<td align="left">The logical device numbers of the Host Bus Adapter (HBA) for the storage group. In single quotes.</td>
+<td align="left">The logical device number of the Host Bus Adapter (HBA) for the storage group. In single quotes.</td>
 <td align="left">'0001'</td>
 </tr>
 <tr>
@@ -343,7 +348,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.ftp.ip</strong></td>
-<td align="left">IP address for the FTP server that will be used to pass config files and iso to KVM host LPAR and bastion<br /> VM during their first boot.</td>
+<td align="left">IP address for the FTP server that will be used to pass config files and iso to KVM host LPAR and bastion<br /> VM during their first boot. Will be moved to vault.yaml and redacted during encrypt_vars<br /> role of setup.yaml playbook.</td>
 <td align="left">192.168.10.201</td>
 </tr>
 <tr>
@@ -353,7 +358,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.ftp.pass</strong></td>
-<td align="left">Password to connect to the FTP server as above user.</td>
+<td align="left">Password to connect to the FTP server as above user. Will be moved to vault.yaml and redacted<br /> during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">FTPpa$s!</td>
 </tr>
 <tr>
@@ -378,12 +383,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.redhat.password</strong></td>
-<td align="left">Password to Red Hat above user's account. Used to auto-attach necessary subscriptions to KVM Host,<br /> bastion VM, and pull live images for OpenShift.</td>
+<td align="left">Password to Red Hat above user's account. Used to auto-attach necessary subscriptions to KVM Host,<br /> bastion VM, and pull live images for OpenShift. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">rEdHatPa$s!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.redhat.pull_secret</strong></td>
-<td align="left">Pull secret for OpenShift, comes from Red Hat's <a href="https://console.redhat.com/openshift/install/ibmz/user-provisioned">Hybrid Cloud Console</a>. Make sure to enclose in 'single quotes'.</td>
+<td align="left">Pull secret for OpenShift, comes from Red Hat's <a href="https://console.redhat.com/openshift/install/ibmz/user-provisioned">Hybrid Cloud Console</a>. Make sure to enclose in 'single quotes'.<br /> Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">'{"auths":{"cloud.openshift<br />.com":{"auth":"b3Blb<br />...<br />4yQQ==","email":"redhat.<br />user@gmail.com"}}}'</td>
 </tr>
 <tr>
@@ -423,22 +428,22 @@
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.resources.os_variant</strong></td>
-<td align="left">What version of Red Hat Enterprise Linux would you like to use for the bastion's operating system?<br /> Recommended 8.4 and above. Must match version of mounted ISO on the FTP server.</td>
+<td align="left">Version of Red Hat Enterprise Linux to use for the bastion's operating system.<br /> Recommended 8.4 and above. Must match version of mounted ISO on the FTP server.</td>
 <td align="left">8.5</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.networking.ip</strong></td>
-<td align="left">What will the IPv4 address for the bastion be?</td>
+<td align="left">IPv4 address for the bastion. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
 <td align="left">192.168.10.3</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.networking.hostname</strong></td>
-<td align="left">What will the hostname of the bastion be?</td>
+<td align="left">Hostname of the bastion. Will be combined with<br /> env.bastion.networking.base_domain to create a Fully Qualified Domain Name (FQDN).</td>
 <td align="left">ocpz-bastion</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.networking.subnetmask</strong></td>
-<td align="left">What will the bastion's subnet be?</td>
+<td align="left">Subnet of the bastion.</td>
 <td align="left">255.255.255.0</td>
 </tr>
 <tr>
@@ -447,18 +452,23 @@
 <td align="left">192.168.10.0</td>
 </tr>
 <tr>
-<td align="left"><strong>env.bastion.networking.nameserver</strong></td>
-<td align="left">What is the IPv4 address of the server that resolves the bastion's hostname?</td>
+<td align="left"><strong>env.bastion.networking.nameserver1</strong></td>
+<td align="left">IPv4 address of the server that resolves the bastion's hostname.</td>
 <td align="left">192.168.10.200</td>
 </tr>
 <tr>
+<td align="left"><strong>env.bastion.networking.nameserver2</strong></td>
+<td align="left">(Optional) A second IPv4 address that resolves the bastion's hostname.</td>
+<td align="left">192.168.10.201</td>
+</tr>
+<tr>
 <td align="left"><strong>env.bastion.networking.interface</strong></td>
-<td align="left">What is the name of the networking interface on the bastion?</td>
+<td align="left">Name of the networking interface on the bastion from Linux's perspective. Most likely enc1.</td>
 <td align="left">enc1</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.networking.base_domain</strong></td>
-<td align="left">What is the base domain that, when combined with the hostname, creates a fully-qualified<br /> domain name (FQDN) for the bastion?</td>
+<td align="left">Base domain that, when combined with the hostname, creates a fully-qualified<br /> domain name (FQDN) for the bastion?</td>
 <td align="left">ihost.com</td>
 </tr>
 <tr>
@@ -482,14 +492,24 @@
 <td align="left">OCPZ-01 key</td>
 </tr>
 <tr>
-<td align="left"><strong>env.bastion.options.loadbalancer</strong></td>
-<td align="left">Would you like the bastion to host the load balancer (HAProxy) for the cluster? True or False (boolean).<br /> If false, this service must be provided elsewhere in your environment.</td>
-<td align="left">True</td>
-</tr>
-<tr>
 <td align="left"><strong>env.bastion.options.dns</strong></td>
 <td align="left">Would you like the bastion to host the DNS information for the cluster? True or False (boolean).<br /> If false, resolution must come from elsewhere in your environment. Make sure to add IP addresses for<br /> KVM hosts, bastion, bootstrap, control, compute nodes, AND api, api-int and *.apps as described <a href="https://docs.openshift.com/container-platform/4.8/installing/installing_bare_metal/installing-bare-metal-network-customizations.html">here</a><br /> in section "User-provisioned DNS Requirements" Table 5. If True this will be done for<br /> you in the dns and check_dns roles.</td>
 <td align="left">True</td>
+</tr>
+<tr>
+<td align="left"><strong>env.bastion.options.loadbalancer.on_bastion</strong></td>
+<td align="left">Would you like the bastion to host the load balancer (HAProxy) for the cluster?<br /> True or False (boolean).<br /> If false, this service must be provided elsewhere in your environment, and public and<br /> private IP of the load balancer must be<br /> provided in the following two variables.</td>
+<td align="left">True</td>
+</tr>
+<tr>
+<td align="left"><strong>env.bastion.options.loadbalancer.public_ip</strong></td>
+<td align="left">(Only required if env.bastion.options.loadbalancer.on_bastion is True). The public IPv4<br /> address for your environment's loadbalancer. api, apps, *.apps must use this.</td>
+<td align="left">192.168.10.50</td>
+</tr>
+<tr>
+<td align="left"><strong>env.bastion.options.loadbalancer.private_ip</strong></td>
+<td align="left">(Only required if env.bastion.options.loadbalancer.on_bastion is True). The private IPv4 address<br /> for your environment's loadbalancer. api-int must use this.</td>
+<td align="left">10.24.17.12</td>
 </tr>
 <tr>
 <td align="left"><strong><u>Section 5 - Cluster</u></strong></td>
@@ -507,9 +527,14 @@
 <td align="left">ihost.com</td>
 </tr>
 <tr>
-<td align="left"><strong>env.cluster.networking.nameserver</strong></td>
-<td align="left">What IPv4 address will the cluster get its hostname resolution from? If env.bastion.options.dns<br /> is True, this should be the IP address of the bastion.</td>
+<td align="left"><strong>env.cluster.networking.nameserver1</strong></td>
+<td align="left">IPv4 address that the cluster get its hostname resolution from. If env.bastion.options.dns<br /> is True, this should be the IP address of the bastion.</td>
 <td align="left">192.168.10.200</td>
+</tr>
+<tr>
+<td align="left"><strong>env.cluster.networking.nameserver2</strong></td>
+<td align="left">(Optional) A second IPv4 address will the cluster get its hostname resolution from? If env.bastion.options.dns<br /> is True, this should be left commented out.</td>
+<td align="left">192.168.10.201</td>
 </tr>
 <tr>
 <td align="left"><strong>env.cluster.networking.forwarder</strong></td>
@@ -632,6 +657,16 @@
 <td align="left">America/New_York</td>
 </tr>
 <tr>
+<td align="left"><strong>env.ansible_key_name</strong></td>
+<td align="left">(Optional) Name of the SSH key that Ansible will use to connect to hosts.</td>
+<td align="left">ansible-ocpz</td>
+</tr>
+<tr>
+<td align="left"><strong>env.bridge_name</strong></td>
+<td align="left">(Optional) Name of the macvtap bridge that will be created on the KVM host.</td>
+<td align="left">macvtap-net</td>
+</tr>
+<tr>
 <td align="left"><strong>env.pkgs.galaxy</strong></td>
 <td align="left">A list of Ansible Galaxy collections that will be installed during the setup playbook. The<br /> collections listed are required. Feel free to add more as needed, just make sure to follow the same list format.</td>
 <td align="left">community.general</td>
@@ -725,6 +760,21 @@
 <td align="left"><strong>env.install_config.fips</strong></td>
 <td align="left">True or False (boolean) for whether or not to use the United States' Federal Information Processing<br /> Standards (FIPS). Not yet certified on IBM zSystems. Enclosed in 'single quotes'.</td>
 <td align="left">'false'</td>
+</tr>
+<tr>
+<td align="left"><strong>proxy_env.http_proxy</strong></td>
+<td align="left">(Optional) A proxy URL to use for creating HTTP connections outside the cluster. Will be<br /> used in the install-config and applied to other Ansible hosts unless set otherwise in<br /> no_proxy below. Must follow this pattern: http://usernamepswd&gt;@ip:port</td>
+<td align="left">http://ocp-admin:Pa$sw0rd@9.72.10.1:80</td>
+</tr>
+<tr>
+<td align="left"><strong>proxy_env.https_proxy</strong></td>
+<td align="left">(Optional) A proxy URL to use for creating HTTPS connections outside the cluster. Will be<br /> used in the install-config and applied to other Ansible hosts unless set otherwise in<br /> no_proxy below. Must follow this pattern: https://username:pswd@ip:port</td>
+<td align="left">https://ocp-admin:Pa$sw0rd@9.72.10.1:80</td>
+</tr>
+<tr>
+<td align="left"><strong>proxy_env.no_proxy</strong></td>
+<td align="left">(Optional) A comma-separated list of destination domain names, IP addresses, or other<br /> network CIDRs to exclude from proxying. Preface a domain with . to match subdomains only.<br /> For example, .y.com matches x.y.com, but not y.com. Use * to bypass the proxy for all listed destinations.</td>
+<td align="left">example.com, 192.168.10.1</td>
 </tr>
 </tbody>
 </table>
