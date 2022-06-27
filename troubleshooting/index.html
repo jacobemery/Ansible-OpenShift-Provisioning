@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../prerequisites/">Prerequisites</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../vault-and-tags/">Vault and Tags</a>
-                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Installation Instructions</span></p>
               <ul>
@@ -114,13 +112,25 @@
 <li>Double check your variables.  </li>
 <li>Inspect the part that failed by opening the playbook or role at roles/role-name/tasks/main.yaml  </li>
 <li>Google the specific error message.  </li>
-<li>Re-run the role indivually with <a href="../vault-and-tags/">tags</a> or with the verbosity '-v' option to get more debugging information (more v's give more info). For example:  </li>
+<li>Re-run the role with the verbosity '-v' option to get more debugging information (more v's give more info). For example:  </li>
 </ul>
-<pre class="codehilite"><code>ansible-playbook main.yaml --tags get_ocp -vvv --ask-vault-pass
+<pre class="codehilite"><code>ansible-playbook playbooks/setup_bastion.yaml -vvv
 </code></pre>
 
 <ul>
 <li>Teardown the KVM host with the delete_partition.yaml playbook or teardown troublesome KVM guests with the <a href="../teardown/">teardown</a> playbooks.</li>
+<li>Use tags</li>
+<li>To be more selective with what parts of a playbook are run, use tags. </li>
+<li>To determine what part of a playbook you would like to run, open the playbook you'd like to run and find the roles parameter. Each <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/tree/main/roles">role</a> has a corresponding tag.</li>
+<li>There are also occasionally tags for sections of a playbook or within the role themselves.</li>
+<li>This is especially helpful for troubleshooting. You can add in tags under the <code>name</code> parameter for individual tasks you'd like to run. </li>
+<li>Here's an example of using a tag:</li>
+</ul>
+<pre class="codehilite"><code>ansible-playbook playbooks/setup_kvm_host.yaml --tags &quot;section_2,section_3&quot;
+</code></pre>
+
+<ul>
+<li>This runs only the parts of the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/setup_kvm_host.yaml">setup_kvm_host playbook</a> marked with tags section_2 and section_3. To use more than one tag, they must be quoted (single or double) and comma-separated (with or without spaces between).</li>
 <li>E-mail Jacob Emery at jacob.emery@ibm.com</li>
 <li>If it's a problem with an OpenShift verification step: <ul>
 <li>Open the cockpit to monitor the VMs. </li>
@@ -128,7 +138,7 @@
 <li>Sign-in with your credentials set in the variables file</li>
 <li>Enable administrative access in the top right.</li>
 <li>Open the 'Virtual Machines' tab from the left side toolbar.</li>
-<li>Sometimes it just takes a while, especially if it's lacking resources. Give it some time and then re-reun the playbook/role with <a href="../vault-and-tags/">tags</a>. </li>
+<li>Sometimes it just takes a while, especially if it's lacking resources. Give it some time and then re-reun the playbook/role with tags.</li>
 <li>If that doesn't work, SSH into the bastion as root ("ssh root@\&lt;bastion-ip-address-here>") and then run, "export KUBECONFIG=~/ocpinst/auth/kubeconfig" and then "oc whoami" and make sure it ouputs "system:admin". Then run the shell command from the role you would like to check on manually: i.e. 'oc get nodes', 'oc get co', etc.</li>
 <li>Open the .openshift_install.log file for information on what happened and try to debug the issue.</li>
 </ul>

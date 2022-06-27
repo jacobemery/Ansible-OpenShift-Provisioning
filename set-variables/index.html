@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../prerequisites/">Prerequisites</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../vault-and-tags/">Vault and Tags</a>
-                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Installation Instructions</span></p>
               <ul class="current">
@@ -133,12 +131,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.cpc_name</strong></td>
-<td align="left">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC). Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC).</td>
 <td align="left">SYS1</td>
 </tr>
 <tr>
 <td align="left"><strong>env.z.hmc.host</strong></td>
-<td align="left">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL). Will be moved to vault.yaml and redacted during encrypt_vars role<br /> of setup.yaml playbook.</td>
+<td align="left">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL).</td>
 <td align="left">192.168.10.1</td>
 </tr>
 <tr>
@@ -148,7 +146,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.hmc.pass</strong></td>
-<td align="left">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
 <td align="left">hmcPas$w0rd!</td>
 </tr>
 <tr>
@@ -168,12 +166,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.access.pass</strong></td>
-<td align="left">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).<br /> Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
 <td align="left">ch4ngeMe!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.root_pass</strong></td>
-<td align="left">The root password for RHEL installed on the LPAR (the KVM host). Will be moved to vault.yaml and<br /> redacted during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">The root password for RHEL installed on the LPAR (the KVM host).</td>
 <td align="left">$ecureP4ass!</td>
 </tr>
 <tr>
@@ -213,7 +211,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.networking.ip</strong></td>
-<td align="left">The IPv4 address of the LPAR with RHEL installed natively (the KVM host). Will be moved to vault.yaml and<br /> redacted during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">The IPv4 address of the LPAR with RHEL installed natively (the KVM host).</td>
 <td align="left">192.168.10.2</td>
 </tr>
 <tr>
@@ -238,7 +236,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar.networking.nameserver2</strong></td>
-<td align="left">(Optional) A second IPv4 address from which the KVM host can get its hostname resolved. Used for high availability.</td>
+<td align="left">(Optional) A second IPv4 address from which the KVM host can get its hostname<br /> resolved. Used for high availability.</td>
 <td align="left">192.168.10.200</td>
 </tr>
 <tr>
@@ -328,7 +326,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.ftp.ip</strong></td>
-<td align="left">IP address for the FTP server that will be used to pass config files and iso to KVM host LPAR and bastion<br /> VM during their first boot. Will be moved to vault.yaml and redacted during encrypt_vars<br /> role of setup.yaml playbook.</td>
+<td align="left">IP address for the FTP server that will be used to pass config files and iso to KVM host LPAR and bastion<br /> VM during their first boot.</td>
 <td align="left">192.168.10.201</td>
 </tr>
 <tr>
@@ -338,12 +336,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.ftp.pass</strong></td>
-<td align="left">Password to connect to the FTP server as above user. Will be moved to vault.yaml and redacted<br /> during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">Password to connect to the FTP server as above user.</td>
 <td align="left">FTPpa$s!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.ftp.iso_mount_dir</strong></td>
-<td align="left">Directory path relative to FTP root where RHEL ISO is mounted. If FTP root is /var/ftp/pub<br /> and the ISO is mounted at /var/ftp/pub/RHEL/8.5 then this variable would be RHEL/8.5. No slash before or after.</td>
+<td align="left">Directory path relative to FTP root where RHEL ISO is mounted. If FTP root is /var/ftp/pub<br /> and the ISO is mounted at /var/ftp/pub/RHEL/8.5 then this variable would be<br /> RHEL/8.5. No slash before or after.</td>
 <td align="left">RHEL/8.5</td>
 </tr>
 <tr>
@@ -363,12 +361,12 @@
 </tr>
 <tr>
 <td align="left"><strong>env.redhat.password</strong></td>
-<td align="left">Password to Red Hat above user's account. Used to auto-attach necessary subscriptions to KVM Host,<br /> bastion VM, and pull live images for OpenShift. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">Password to Red Hat above user's account. Used to auto-attach necessary subscriptions to KVM Host,<br /> bastion VM, and pull live images for OpenShift.</td>
 <td align="left">rEdHatPa$s!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.redhat.pull_secret</strong></td>
-<td align="left">Pull secret for OpenShift, comes from Red Hat's <a href="https://console.redhat.com/openshift/install/ibmz/user-provisioned">Hybrid Cloud Console</a>. Make sure to enclose in 'single quotes'.<br /> Will be moved to vault.yaml and redacted during encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">Pull secret for OpenShift, comes from Red Hat's <a href="https://console.redhat.com/openshift/install/ibmz/user-provisioned">Hybrid Cloud Console</a>. Make sure to enclose in 'single quotes'.<br /></td>
 <td align="left">'{"auths":{"cloud.openshift<br />.com":{"auth":"b3Blb<br />...<br />4yQQ==","email":"redhat.<br />user@gmail.com"}}}'</td>
 </tr>
 <tr>
@@ -382,8 +380,8 @@
 <td align="left">True</td>
 </tr>
 <tr>
-<td align="left"><strong>env.bastion.name</strong></td>
-<td align="left">Name of the bastion KVM guest. Arbitrary value, not the hostname.</td>
+<td align="left"><strong>env.bastion.vm_name</strong></td>
+<td align="left">Name of the bastion VM. Arbitrary value.</td>
 <td align="left">bastion</td>
 </tr>
 <tr>
@@ -413,7 +411,7 @@
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.networking.ip</strong></td>
-<td align="left">IPv4 address for the bastion. Will be moved to vault.yaml and redacted during<br /> encrypt_vars role of setup.yaml playbook.</td>
+<td align="left">IPv4 address for the bastion.</td>
 <td align="left">192.168.10.3</td>
 </tr>
 <tr>
@@ -537,6 +535,11 @@
 <td align="left">4</td>
 </tr>
 <tr>
+<td align="left"><strong>env.cluster.nodes.bootstrap.vm_name</strong></td>
+<td align="left">Name of the temporary bootstrap node VM. Arbitrary value.</td>
+<td align="left">bootstrap</td>
+</tr>
+<tr>
 <td align="left"><strong>env.cluster.nodes.bootstrap.ip</strong></td>
 <td align="left">IPv4 address of the temporary bootstrap node.</td>
 <td align="left">192.168.10.4</td>
@@ -544,7 +547,7 @@
 <tr>
 <td align="left"><strong>env.cluster.nodes.bootstrap.hostname</strong></td>
 <td align="left">Hostname of the temporary boostrap node. If DNS is hosted on the bastion, this can be anything.<br /> If DNS is hosted elsewhere, this must match DNS definition. This will be combined with the<br /> metadata_name and base_domain to create a Fully Qualififed Domain Name (FQDN).</td>
-<td align="left">bootstrap</td>
+<td align="left">bootstrap-ocpz</td>
 </tr>
 <tr>
 <td align="left"><strong>env.cluster.nodes.control.disk_size</strong></td>
@@ -562,8 +565,13 @@
 <td align="left">4</td>
 </tr>
 <tr>
+<td align="left"><strong>env.cluster.nodes.control.vm_name</strong></td>
+<td align="left">Name of the control node VMs. Arbitrary values. Usually no more or less than 3 are used. Must match<br /> the total number of IP addresses and hostnames for control nodes. Use provided list format.</td>
+<td align="left">control-1<br />control-2<br />control-3</td>
+</tr>
+<tr>
 <td align="left"><strong>env.cluster.nodes.control.ip</strong></td>
-<td align="left">IPv4 address of the control nodes. Usually no more or less than 3 are used. Use provided<br /> list formatting.</td>
+<td align="left">IPv4 address of the control nodes. Use provided<br /> list formatting.</td>
 <td align="left">192.168.10.5<br />192.168.10.6<br />192.168.10.7</td>
 </tr>
 <tr>
@@ -587,13 +595,18 @@
 <td align="left">2</td>
 </tr>
 <tr>
+<td align="left"><strong>env.cluster.nodes.compute.vm_name</strong></td>
+<td align="left">Name of the compute node VMs. Arbitrary values. This list can be expanded to any<br /> number of nodes, minimum 2. Must match the total number of IP<br /> addresses and hostnames for compute nodes. Use provided list format.</td>
+<td align="left">compute-1<br />compute-2</td>
+</tr>
+<tr>
 <td align="left"><strong>env.cluster.nodes.compute.ip</strong></td>
-<td align="left">IPv4 address of the compute nodes. This list can be expanded to any number of nodes,<br /> minimum 2. Use provided list formatting.</td>
+<td align="left">IPv4 address of the compute nodes. Must match the total number of VM names and<br /> hostnames for compute nodes. Use provided list formatting.</td>
 <td align="left">192.168.10.8<br />192.168.10.9</td>
 </tr>
 <tr>
 <td align="left"><strong>env.cluster.nodes.compute.hostname</strong></td>
-<td align="left">Hostnames for compute nodes. Must match the total number of IP addresses for compute nodes.<br /> If DNS is hosted on the bastion, this can be anything. If DNS is hosted elsewhere, this must match<br /> DNS definition. This will be combined with the metadata_name and base_domain to create<br /> a Fully Qualififed Domain Name (FQDN).</td>
+<td align="left">Hostnames for compute nodes. Must match the total number of IP addresses and<br /> VM names for compute nodes. If DNS is hosted on the bastion, this can be anything.<br /> If DNS is hosted elsewhere, this must match DNS definition. This will be combined with the<br /> metadata_name and base_domain to create a Fully Qualififed Domain Name (FQDN).</td>
 <td align="left">compute-01<br />compute-02</td>
 </tr>
 <tr>
@@ -610,6 +623,11 @@
 <td align="left"><strong>env.cluster.nodes.infra.vcpu</strong></td>
 <td align="left">(Optional) How many virtual CPUs would you like to allocate to each infra node?<br /> Recommended 2 or more.</td>
 <td align="left">2</td>
+</tr>
+<tr>
+<td align="left"><strong>env.cluster.nodes.infra.vm_name</strong></td>
+<td align="left">(Optional) Name of additional infra node VMs. Arbitrary values. This list can be<br /> expanded to any number of nodes, minimum 2. Must match the total<br /> number of IP addresses and hostnames for infra nodes. Use provided list format.</td>
+<td align="left">infra-1<br />infra-2</td>
 </tr>
 <tr>
 <td align="left"><strong>env.cluster.nodes.infra.ip</strong></td>

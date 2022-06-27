@@ -51,8 +51,6 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../prerequisites/">Prerequisites</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../vault-and-tags/">Vault and Tags</a>
-                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Installation Instructions</span></p>
               <ul>
@@ -116,7 +114,7 @@
 </ul>
 </li>
 </ul>
-<pre class="codehilite"><code>ansible-playbook playbooks/teardown.yaml --tags full --ask-vault-pass
+<pre class="codehilite"><code>ansible-playbook playbooks/teardown.yaml --tags full 
 </code></pre>
 
 <ul>
@@ -125,7 +123,7 @@
 </ul>
 </li>
 </ul>
-<pre class="codehilite"><code>ansible-playbook playbooks/teardown.yaml --tags partial --ask-vault-pass
+<pre class="codehilite"><code>ansible-playbook playbooks/teardown.yaml --tags partial 
 </code></pre>
 
 <ul>
