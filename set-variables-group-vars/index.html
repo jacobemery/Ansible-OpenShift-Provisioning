@@ -136,7 +136,7 @@
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <ul>
 <li>In a text editor of your choice, open the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml">environment variables file</a>.</li>
-<li>This is the master variables file and you will likely reference it many times throughout the process. The default inventory can be found at <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default">inventories/default</a>.</li>
+<li>This is the master variables file and you will likely reference it many times throughout the process. The default inventory can be found at <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml">inventories/default/group_vars/all.yaml</a>.</li>
 <li>The variables mark with an <code>X</code> are required to be filled in. Many values are pre-filled or are optional. Optional values are commented out; in order to use them, remove the <code>#</code> and fill them in.</li>
 <li>This is the most important step in the process. Take the time to make sure everything here is correct.</li>
 <li><u>Note on YAML syntax</u>: Only the lowest value in each hierarchicy needs to be filled in. For example, at the top of the variables file env and z don't need to be filled in, but the cpc_name does. There are X's where input is required to help you with this.</li>
@@ -190,6 +190,11 @@
 <td align="left">192.168.10.1</td>
 </tr>
 <tr>
+<td align="left"><strong>env.z.lpar1.user</strong></td>
+<td align="left">Username for Linux admin on KVM host 1. Recommended to run as a non-root user with sudo access.</td>
+<td align="left">admin</td>
+</tr>
+<tr>
 <td align="left"><strong>env.z.lpar1.pass</strong></td>
 <td align="left">The password for the user that will be created or exists on the KVM host.</td>
 <td align="left">ch4ngeMe!</td>
@@ -210,6 +215,11 @@
 <td align="left">192.168.10.2</td>
 </tr>
 <tr>
+<td align="left"><strong>env.z.lpar2.user</strong></td>
+<td align="left">Username for Linux admin on KVM host 2. Recommended to run as a non-root user with sudo access.</td>
+<td align="left">admin</td>
+</tr>
+<tr>
 <td align="left"><strong>env.z.lpar2.pass</strong></td>
 <td align="left"><b>(Optional)</b> The password for the admin user on the second KVM host.</td>
 <td align="left">ch4ngeMe!</td>
@@ -228,6 +238,11 @@
 <td align="left"><strong>env.z.lpar3.ip</strong></td>
 <td align="left"><b>(Optional)</b> The IPv4 address of the third KVM host.</td>
 <td align="left">192.168.10.3</td>
+</tr>
+<tr>
+<td align="left"><strong>env.z.lpar3.user</strong></td>
+<td align="left">Username for Linux admin on KVM host 3. Recommended to run as a non-root user with sudo access.</td>
+<td align="left">admin</td>
 </tr>
 <tr>
 <td align="left"><strong>env.z.lpar3.pass</strong></td>
