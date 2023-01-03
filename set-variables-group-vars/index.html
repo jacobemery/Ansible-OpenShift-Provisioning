@@ -402,17 +402,17 @@
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.access.user</strong></td>
-<td align="left">What would you like the admin's username to be on the bastion?</td>
+<td align="left">What would you like the admin's username to be on the bastion?<br /> If root, make pass and root_pass vars the same.</td>
 <td align="left">admin</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.access.pass</strong></td>
-<td align="left">The password to the bastion's admin user.</td>
+<td align="left">The password to the bastion's admin user. If using root, make<br /> pass and root_pass vars the same.</td>
 <td align="left">cH4ngeM3!</td>
 </tr>
 <tr>
 <td align="left"><strong>env.bastion.access.root_pass</strong></td>
-<td align="left">The root password for the bastion.</td>
+<td align="left">The root password for the bastion. If using root, make<br /> pass and root_pass vars the same.</td>
 <td align="left">R0OtPa$s!</td>
 </tr>
 <tr>
@@ -795,8 +795,8 @@
 </tr>
 <tr>
 <td align="left"><strong>proxy_env.no_proxy</strong></td>
-<td align="left">(Optional) A comma-separated list of destination domain names, IP addresses, or other<br /> network CIDRs to exclude from proxying. Preface a domain with . to match subdomains only.<br /> For example, .y.com matches x.y.com, but not y.com. Use * to bypass the proxy for all listed destinations.</td>
-<td align="left">example.com, 192.168.10.1</td>
+<td align="left">(Optional) A comma-separated list (no spaces) of destination domain names, IP<br /> addresses, or other network CIDRs to exclude from proxying. When using a<br /> proxy, all necessary IPs and domains for your cluster will be added automatically. See<br /> roles/get_ocp/templates/install-config.yaml.j2 for more details on the template. <br />Preface a domain with . to match subdomains only. For example, .y.com matches<br /> x.y.com, but not y.com. Use * to bypass the proxy for all listed destinations.</td>
+<td align="left">example.com,192.168.10.1</td>
 </tr>
 </tbody>
 </table>
