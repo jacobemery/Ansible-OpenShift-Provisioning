@@ -60,6 +60,8 @@
                   </li>
                   <li class="toctree-l1 current"><a class="reference internal current" href="./">3 Set Variables (host_vars)</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#1-kvm-host">1 - KVM Host</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#important-note">Important Note</a>
@@ -115,6 +117,17 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="step-3-set-variables-host_vars">Step 3: Set Variables (host_vars)<a class="headerlink" href="#step-3-set-variables-host_vars" title="Permanent link">#</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<ul>
+<li>Similar to the group_vars file, the host_vars files for each LPAR (KVM host) must be filled in. </li>
+<li>For each KVM host to be acted upon with Ansible, you must have a corresponding host_vars file named <code>&lt;kvm-hostname&gt;.yaml</code> (i.e. ocpz1.yaml, ocpz2.yaml, ocpz3.yaml), so you must copy and rename the templates found in the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/host_vars">host_vars folder</a> accordingly.</li>
+<li>The variables marked with an <code>X</code> are required to be filled in. Many values are pre-filled or are optional. </li>
+<li>Optional values are commented out; in order to use them, remove the <code>#</code> and fill them in.</li>
+<li>Many of the variables in these host_vars files are only required if you are NOT using pre-existing LPARs with RHEL installed. See the <code>Important Note</code> below this first section for more details.</li>
+<li>This is the most important step in the process. Take the time to make sure everything here is correct.</li>
+<li><u>Note on YAML syntax</u>: Only the lowest value in each hierarchicy needs to be filled in. For example, at the top of the variables file networking does not need to be filled in, but the hostname does. There are X's where input is required to help you with this.</li>
+<li>Scroll the table to the right to see examples for each variable.</li>
+</ul>
 <h2 id="1-kvm-host">1 - KVM Host<a class="headerlink" href="#1-kvm-host" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -174,7 +187,6 @@
 <li>With pre-existing LPARs with RHEL installed, you can also skip <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/1_create_lpar.yaml">1_create_lpar.yaml</a> and <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/2_create_kvm_host.yaml">2_create_kvm_host.yaml</a> playbooks. Make sure to still do <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/0_setup.yaml">0_setup.yaml</a> first though, then skip to <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/3_setup_kvm_host.yaml">3_setup_kvm_host.yaml</a></li>
 </ul>
 </li>
-<li>Each KVM host that exists (or will be created) must have a corresponding file in the host_vars folder of your inventory, and the name of the files must match the KVM host's hostname plus the .yaml extension (e.g. KVMHOST01.yaml, KVMHOST2.yaml, and KVMHOST3.yaml for a highly available cluster).</li>
 </ul>
 <h2 id="2-optional-cpc-hmc">2 - (Optional) CPC &amp; HMC<a class="headerlink" href="#2-optional-cpc-hmc" title="Permanent link">#</a></h2>
 <table>

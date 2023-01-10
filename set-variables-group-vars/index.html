@@ -135,12 +135,12 @@
                 <h1 id="step-2-set-variables-group_vars">Step 2: Set Variables (group_vars)<a class="headerlink" href="#step-2-set-variables-group_vars" title="Permanent link">#</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <ul>
-<li>In a text editor of your choice, open the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml">environment variables file</a>.</li>
-<li>This is the master variables file and you will likely reference it many times throughout the process. The default inventory can be found at <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml">inventories/default/group_vars/all.yaml</a>.</li>
-<li>The variables mark with an <code>X</code> are required to be filled in. Many values are pre-filled or are optional. Optional values are commented out; in order to use them, remove the <code>#</code> and fill them in.</li>
+<li>In a text editor of your choice, open the template of the <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default/group_vars/all.yaml.template">environment variables file</a>. Make a copy of it called all.yaml and paste it into the same directory with its template.</li>
+<li>all.yaml is your master variables file and you will likely reference it many times throughout the process. The default inventory can be found at <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/inventories/default">inventories/default</a>.</li>
+<li>The variables marked with an <code>X</code> are required to be filled in. Many values are pre-filled or are optional. Optional values are commented out; in order to use them, remove the <code>#</code> and fill them in.</li>
 <li>This is the most important step in the process. Take the time to make sure everything here is correct.</li>
 <li><u>Note on YAML syntax</u>: Only the lowest value in each hierarchicy needs to be filled in. For example, at the top of the variables file env and z don't need to be filled in, but the cpc_name does. There are X's where input is required to help you with this.</li>
-<li>Scroll table to the right to see examples for each variable.</li>
+<li>Scroll the table to the right to see examples for each variable.</li>
 </ul>
 <h2 id="1-workstation">1 - Workstation<a class="headerlink" href="#1-workstation" title="Permanent link">#</a></h2>
 <table>
