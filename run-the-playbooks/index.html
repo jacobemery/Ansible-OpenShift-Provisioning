@@ -217,21 +217,19 @@
 </ul>
 <h2 id="0-setup-playbook">0 Setup Playbook<a class="headerlink" href="#0-setup-playbook" title="Permanent link">#</a></h2>
 <h4 id="overview_1">Overview<a class="headerlink" href="#overview_1" title="Permanent link">#</a></h4>
-<p>First-time setup of the workstation (AKA the Ansible Controller).</p>
+<p>First-time setup of the Ansible Controller, the machine running Ansible.</p>
 <h4 id="outcomes">Outcomes<a class="headerlink" href="#outcomes" title="Permanent link">#</a></h4>
 <ul>
 <li>Packages and Ansible Galaxy collections are confirmed to be installed properly.</li>
 <li>host_vars files are confirmed to match KVM host(s) hostnames.</li>
 <li>Ansible inventory is templated out and working properly.</li>
 <li>SSH key generated for Ansible passwordless authentication.</li>
-<li>SSH agent is setup on the workstation.</li>
+<li>SSH agent is setup on the Ansible Controller.</li>
 <li>Ansible SSH key is copied to the FTP server.</li>
 </ul>
 <h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h4>
 <ul>
-<li>Recommended to stop here and ensure that the inventory/hosts file is set up as you wish.</li>
-<li>You may need to change the Python interpreter. To change it for the workstation, go to the ansible.cfg file found in the project's root directory and change the default parameter to the result of the 'which --python3' command on your workstation.</li>
-<li>You can use an existing SSH key as your Ansible key, but it is highly recommended to use one without a passphrase.</li>
+<li>You can use an existing SSH key as your Ansible key, or have Ansible create one for you. It is highly recommended to use one without a passphrase.</li>
 </ul>
 <h2 id="1-create-lpar-playbook">1 Create LPAR Playbook<a class="headerlink" href="#1-create-lpar-playbook" title="Permanent link">#</a></h2>
 <h4 id="overview_2">Overview<a class="headerlink" href="#overview_2" title="Permanent link">#</a></h4>
