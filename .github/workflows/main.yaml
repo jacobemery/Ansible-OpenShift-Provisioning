@@ -4,7 +4,7 @@ on:
     branches:
       - docs-deploy
     paths:
-      - 'mkdocs.yml'
+      - 'mkdocs.yaml'
       - 'docs/**'
 
 jobs:
