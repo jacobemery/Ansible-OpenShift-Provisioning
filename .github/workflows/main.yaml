@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'mkdocs.yml'
+      - 'docs/**'
 
 jobs:
   build:
@@ -16,4 +19,4 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@nomaterial
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CONFIG_FILE: mkdocs.yml
+          CONFIG_FILE: mkdocs.yaml
