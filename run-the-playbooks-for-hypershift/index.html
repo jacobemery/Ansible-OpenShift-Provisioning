@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://ibm.github.io/Ansible-OpenShift-Provisioning/run-the-playbooks-for-hypershift/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Run the Playbooks - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
+    <title>Run the Playbooks (HyperShift) - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Run the Playbooks";
+        var mkdocs_page_name = "Run the Playbooks (HyperShift)";
         var mkdocs_page_input_path = "run-the-playbooks-for-hypershift.md";
         var mkdocs_page_url = "/Ansible-OpenShift-Provisioning/run-the-playbooks-for-hypershift/";
       </script>
@@ -52,7 +52,7 @@
                   </li>
               </ul>
               <p class="caption"><span class="caption-text">Installation Instructions</span></p>
-              <ul>
+              <ul class="current">
                   <li class="toctree-l1"><a class="reference internal" href="../get-info/">1 Get Info</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../set-variables-group-vars/">2 Set Variables (group_vars)</a>
@@ -61,12 +61,34 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../run-the-playbooks/">4 Run the Playbooks</a>
                   </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Run the Playbooks (HyperShift)</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#network-prerequisites">Network Prerequisites</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#note">Note:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-1-setup-ansible-vault-for-management-cluster-credentials">Step-1: Setup Ansible Vault for Management Cluster Credentials</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#steps">Steps:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-2-initial-setup-for-hypershift">Step-2: Initial Setup for Hypershift</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#step-3-create-hosted-cluster">Step-3: Create Hosted Cluster</a>
+    </li>
+    </ul>
+                  </li>
               </ul>
               <p class="caption"><span class="caption-text">Misc</span></p>
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
-                  </li>
-                  <li class="toctree-l1"><a class="" href="../CHANGELOG.md">Change Log</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../acknowledgements/">Acknowledgements</a>
                   </li>
@@ -85,7 +107,8 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li class="breadcrumb-item active">Run the Playbooks</li>
+          <li>Installation Instructions &raquo;</li>
+      <li class="breadcrumb-item active">Run the Playbooks (HyperShift)</li>
     <li class="wy-breadcrumbs-aside">
           <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/run-the-playbooks-for-hypershift.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
@@ -266,6 +289,10 @@ password: '&lt;password&gt;'
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../run-the-playbooks/" class="btn btn-neutral float-left" title="4 Run the Playbooks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../troubleshooting/" class="btn btn-neutral float-right" title="Troubleshooting">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -292,6 +319,10 @@ password: '&lt;password&gt;'
         </span>
     
     
+      <span><a href="../run-the-playbooks/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../troubleshooting/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
