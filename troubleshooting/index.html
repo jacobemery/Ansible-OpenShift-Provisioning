@@ -8,7 +8,7 @@
     <title>Troubleshooting - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/Ansible-OpenShift-Provisioning/troubleshooting/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <img src="../images/ansible-logo.png" class="logo" alt="Logo"/>
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -69,7 +68,7 @@
     <ul class="current">
     </ul>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG/">Change Log</a>
+                  <li class="toctree-l1"><a class="" href="../CHANGELOG.md">Change Log</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../acknowledgements/">Acknowledgements</a>
                   </li>
@@ -87,16 +86,15 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Misc &raquo;</li><li>Troubleshooting</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Misc &raquo;</li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/troubleshooting.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/troubleshooting.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -132,7 +130,7 @@
 <li>Enable administrative access in the top right.</li>
 <li>Open the 'Virtual Machines' tab from the left side toolbar.</li>
 <li>Sometimes it just takes a while, especially if it's lacking resources. Give it some time and then re-reun the playbook/role with tags.</li>
-<li>If that doesn't work, SSH into the bastion as root ("ssh root@\&lt;bastion-ip-address-here>") and then run, "export KUBECONFIG=/root/ocpinst/auth/kubeconfig" and then "oc whoami" and make sure it ouputs "system:admin". Then run the shell command from the role you would like to check on manually: i.e. 'oc get nodes', 'oc get co', etc.</li>
+<li>If that doesn't work, SSH into the bastion as root ("ssh root@\&lt;bastion-ip-address-here&gt;") and then run, "export KUBECONFIG=/root/ocpinst/auth/kubeconfig" and then "oc whoami" and make sure it ouputs "system:admin". Then run the shell command from the role you would like to check on manually: i.e. 'oc get nodes', 'oc get co', etc.</li>
 <li>Open the .openshift_install.log file for information on what happened and try to debug the issue.</li>
 </ul>
 </li>
@@ -142,7 +140,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../run-the-playbooks/" class="btn btn-neutral float-left" title="4 Run the Playbooks"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../CHANGELOG/" class="btn btn-neutral float-right" title="Change Log">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../acknowledgements/" class="btn btn-neutral float-right" title="Acknowledgements">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -173,18 +171,19 @@
       <span><a href="../run-the-playbooks/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../CHANGELOG/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../acknowledgements/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>

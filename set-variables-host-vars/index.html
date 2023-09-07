@@ -8,7 +8,7 @@
     <title>3 Set Variables (host_vars) - Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
@@ -17,12 +17,11 @@
         var mkdocs_page_url = "/Ansible-OpenShift-Provisioning/set-variables-host-vars/";
       </script>
     
-    <script src="../js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="../js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
 </head>
 
 <body class="wy-body-for-nav" role="document">
@@ -35,7 +34,7 @@
           <img src="../images/ansible-logo.png" class="logo" alt="Logo"/>
         </a><div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -85,7 +84,7 @@
               <ul>
                   <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
                   </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../CHANGELOG/">Change Log</a>
+                  <li class="toctree-l1"><a class="" href="../CHANGELOG.md">Change Log</a>
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../acknowledgements/">Acknowledgements</a>
                   </li>
@@ -103,16 +102,15 @@
       <div class="wy-nav-content">
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Installation Instructions &raquo;</li><li>3 Set Variables (host_vars)</li>
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Installation Instructions &raquo;</li>
+      <li class="breadcrumb-item active">3 Set Variables (host_vars)</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/set-variables-host-vars.md"
-          class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/IBM/Ansible-OpenShift-Provisioning/edit/main/docs/set-variables-host-vars.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
 </div>
-
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
@@ -132,51 +130,56 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>networking.hostname</strong></td>
-<td align="left">The hostname of the LPAR with RHEL installed natively (the KVM host).</td>
-<td align="left">kvm-host-01</td>
+<td style="text-align: left;"><strong>networking.hostname</strong></td>
+<td style="text-align: left;">The hostname of the LPAR with RHEL installed natively (the KVM host).</td>
+<td style="text-align: left;">kvm-host-01</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.ip</strong></td>
-<td align="left">The IPv4 address of the LPAR with RHEL installed natively (the KVM host).</td>
-<td align="left">192.168.10.2</td>
+<td style="text-align: left;"><strong>networking.ip</strong></td>
+<td style="text-align: left;">The IPv4 address of the LPAR with RHEL installed natively (the KVM host).</td>
+<td style="text-align: left;">192.168.10.2</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.subnetmask</strong></td>
-<td align="left">The subnet that the LPAR resides in within your network.</td>
-<td align="left">255.255.255.0</td>
+<td style="text-align: left;"><strong>networking.subnetmask</strong></td>
+<td style="text-align: left;">The subnet that the LPAR resides in within your network.</td>
+<td style="text-align: left;">255.255.255.0</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.gateway</strong></td>
-<td align="left">The IPv4 address of the gateway to the network where the KVM host resides.</td>
-<td align="left">192.168.10.0</td>
+<td style="text-align: left;"><strong>networking.gateway</strong></td>
+<td style="text-align: left;">The IPv4 address of the gateway to the network where the KVM host resides.</td>
+<td style="text-align: left;">192.168.10.0</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.nameserver1</strong></td>
-<td align="left">The IPv4 address from which the KVM host gets its hostname resolved.</td>
-<td align="left">192.168.10.200</td>
+<td style="text-align: left;"><strong>networking.nameserver1</strong></td>
+<td style="text-align: left;">The IPv4 address from which the KVM host gets its hostname resolved.</td>
+<td style="text-align: left;">192.168.10.200</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.nameserver2</strong></td>
-<td align="left"><b>(Optional)</b> A second IPv4 address from which the KVM host can get its hostname<br /> resolved. Used for high availability.</td>
-<td align="left">192.168.10.201</td>
+<td style="text-align: left;"><strong>networking.nameserver2</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> A second IPv4 address from which the KVM host can get its hostname<br /> resolved. Used for high availability.</td>
+<td style="text-align: left;">192.168.10.201</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.device1</strong></td>
-<td align="left">The network interface card from Linux's perspective. Usually enc and then a number that comes<br /> from the dev_num of the network adapter.</td>
-<td align="left">enc100</td>
+<td style="text-align: left;"><strong>networking.device1</strong></td>
+<td style="text-align: left;">The network interface card from Linux's perspective. Usually enc and then a number that comes<br /> from the dev_num of the network adapter.</td>
+<td style="text-align: left;">enc100</td>
 </tr>
 <tr>
-<td align="left"><strong>networking.device2</strong></td>
-<td align="left"><b>(Optional)</b> Another Linux network interface card. Usually enc and then a number that comes<br /> from the dev_num of the second network adapter.</td>
-<td align="left">enc1</td>
+<td style="text-align: left;"><strong>networking.device2</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> Another Linux network interface card. Usually enc and then a number that comes<br /> from the dev_num of the second network adapter.</td>
+<td style="text-align: left;">enc1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>storage.pool_path</strong></td>
+<td style="text-align: left;">The absolute path to a directory on your KVM host that will be used to store qcow2 <br />images for the cluster and other installation artifacts. A sub-directory will be created here that matches your clsuter's <br />metadata name that will act as the cluster's libvirt storage pool directory. Note: all directories present in this path will be made executable for the<br /> 'qemu' group, as is required.</td>
+<td style="text-align: left;">/home/kvm_admin/VirtualMachines</td>
 </tr>
 </tbody>
 </table>
@@ -192,31 +195,31 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>cpc_name</strong></td>
-<td align="left">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC).</td>
-<td align="left">SYS1</td>
+<td style="text-align: left;"><strong>cpc_name</strong></td>
+<td style="text-align: left;">The name of the IBM zSystems / LinuxONE mainframe that you are creating a Red Hat OpenShift Container<br /> Platform cluster on. Can be found under the "Systems Management" tab of the Hardware Management<br /> Console (HMC).</td>
+<td style="text-align: left;">SYS1</td>
 </tr>
 <tr>
-<td align="left"><strong>hmc.host</strong></td>
-<td align="left">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL).</td>
-<td align="left">192.168.10.1</td>
+<td style="text-align: left;"><strong>hmc.host</strong></td>
+<td style="text-align: left;">The IPv4 address of the HMC you will be connecting to in order to create a Logical Partition (LPAR)<br /> on which will act as the Kernel-based Virtual Machine (KVM) host aftering installing and setting up<br /> Red Hat Enterprise Linux (RHEL).</td>
+<td style="text-align: left;">192.168.10.1</td>
 </tr>
 <tr>
-<td align="left"><strong>hmc.user</strong></td>
-<td align="left">The username that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
-<td align="left">hmc-user</td>
+<td style="text-align: left;"><strong>hmc.user</strong></td>
+<td style="text-align: left;">The username that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
+<td style="text-align: left;">hmc-user</td>
 </tr>
 <tr>
-<td align="left"><strong>hmc.pass</strong></td>
-<td align="left">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
-<td align="left">hmcPas$w0rd!</td>
+<td style="text-align: left;"><strong>hmc.pass</strong></td>
+<td style="text-align: left;">The password that the HMC API call will use to connect to the HMC. Must have access to create<br /> LPARs, attach storage groups and networking cards.</td>
+<td style="text-align: left;">hmcPas$w0rd!</td>
 </tr>
 </tbody>
 </table>
@@ -224,36 +227,36 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>lpar.name</strong></td>
-<td align="left">The name of the Logical Partition (LPAR) that you would like to create/target for the creation of<br /> your cluster. This LPAR will act as the KVM host, with RHEL installed natively.</td>
-<td align="left">OCPKVM1</td>
+<td style="text-align: left;"><strong>lpar.name</strong></td>
+<td style="text-align: left;">The name of the Logical Partition (LPAR) that you would like to create/target for the creation of<br /> your cluster. This LPAR will act as the KVM host, with RHEL installed natively.</td>
+<td style="text-align: left;">OCPKVM1</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.description</strong></td>
-<td align="left">A short description of what this LPAR will be used for, will only be displayed in the HMC next to<br /> the LPAR name for identification purposes.</td>
-<td align="left">KVM host LPAR for RHOCP cluster.</td>
+<td style="text-align: left;"><strong>lpar.description</strong></td>
+<td style="text-align: left;">A short description of what this LPAR will be used for, will only be displayed in the HMC next to<br /> the LPAR name for identification purposes.</td>
+<td style="text-align: left;">KVM host LPAR for RHOCP cluster.</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.access.user</strong></td>
-<td align="left">The username that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
-<td align="left">kvm-admin</td>
+<td style="text-align: left;"><strong>lpar.access.user</strong></td>
+<td style="text-align: left;">The username that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
+<td style="text-align: left;">kvm-admin</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.access.pass</strong></td>
-<td align="left">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
-<td align="left">ch4ngeMe!</td>
+<td style="text-align: left;"><strong>lpar.access.pass</strong></td>
+<td style="text-align: left;">The password for the user that will be created in RHEL when it is installed on the LPAR (the KVM host).</td>
+<td style="text-align: left;">ch4ngeMe!</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.root_pass</strong></td>
-<td align="left">The root password for RHEL installed on the LPAR (the KVM host).</td>
-<td align="left">$ecureP4ass!</td>
+<td style="text-align: left;"><strong>lpar.root_pass</strong></td>
+<td style="text-align: left;">The root password for RHEL installed on the LPAR (the KVM host).</td>
+<td style="text-align: left;">$ecureP4ass!</td>
 </tr>
 </tbody>
 </table>
@@ -261,41 +264,41 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>lpar.ifl.count</strong></td>
-<td align="left">Number of Integrated Facilities for Linux (IFL) processors will be assigned to this LPAR.<br /> 6 or more recommended.</td>
-<td align="left">6</td>
+<td style="text-align: left;"><strong>lpar.ifl.count</strong></td>
+<td style="text-align: left;">Number of Integrated Facilities for Linux (IFL) processors will be assigned to this LPAR.<br /> 6 or more recommended.</td>
+<td style="text-align: left;">6</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.ifl.initial memory</strong></td>
-<td align="left">Initial memory allocation for LPAR to have at start-up (in megabytes).</td>
-<td align="left">55000</td>
+<td style="text-align: left;"><strong>lpar.ifl.initial memory</strong></td>
+<td style="text-align: left;">Initial memory allocation for LPAR to have at start-up (in megabytes).</td>
+<td style="text-align: left;">55000</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.ifl.max_memory</strong></td>
-<td align="left">The most amount of memory this LPAR can be using at any one time (in megabytes).</td>
-<td align="left">99000</td>
+<td style="text-align: left;"><strong>lpar.ifl.max_memory</strong></td>
+<td style="text-align: left;">The most amount of memory this LPAR can be using at any one time (in megabytes).</td>
+<td style="text-align: left;">99000</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.ifl.initial_weight</strong></td>
-<td align="left">For LPAR load balancing purposes, the processing weight this LPAR will have at start-up (1-999).</td>
-<td align="left">100</td>
+<td style="text-align: left;"><strong>lpar.ifl.initial_weight</strong></td>
+<td style="text-align: left;">For LPAR load balancing purposes, the processing weight this LPAR will have at start-up (1-999).</td>
+<td style="text-align: left;">100</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.ifl.min_weight</strong></td>
-<td align="left">For LPAR load balancing purposes, the minimum weight that this LPAR can have at any one time (1-999).</td>
-<td align="left">50</td>
+<td style="text-align: left;"><strong>lpar.ifl.min_weight</strong></td>
+<td style="text-align: left;">For LPAR load balancing purposes, the minimum weight that this LPAR can have at any one time (1-999).</td>
+<td style="text-align: left;">50</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.ifl.max_weight</strong></td>
-<td align="left">For LPAR load balancing purposes, the maximum weight that this LPAR can have at any one time (1-999).</td>
-<td align="left">500</td>
+<td style="text-align: left;"><strong>lpar.ifl.max_weight</strong></td>
+<td style="text-align: left;">For LPAR load balancing purposes, the maximum weight that this LPAR can have at any one time (1-999).</td>
+<td style="text-align: left;">500</td>
 </tr>
 </tbody>
 </table>
@@ -303,56 +306,56 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>lpar.networking.subnet_cidr</strong></td>
-<td align="left">The same value as the above variable but in Classless Inter-<br />Domain Routing (CIDR) notation.</td>
-<td align="left">23</td>
+<td style="text-align: left;"><strong>lpar.networking.subnet_cidr</strong></td>
+<td style="text-align: left;">The same value as the above variable but in Classless Inter-<br />Domain Routing (CIDR) notation.</td>
+<td style="text-align: left;">23</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card1.name</strong></td>
-<td align="left">The logical name of the Network Interface Card (NIC) within the HMC.<br /> An arbitrary value<br /> that is human-readable that points to the NIC.</td>
-<td align="left">SYS-NIC-01</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card1.name</strong></td>
+<td style="text-align: left;">The logical name of the Network Interface Card (NIC) within the HMC.<br /> An arbitrary value<br /> that is human-readable that points to the NIC.</td>
+<td style="text-align: left;">SYS-NIC-01</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card1.adapter</strong></td>
-<td align="left">The physical adapter name reference to the logical adapter for the LPAR.</td>
-<td align="left">10Gb-A</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card1.adapter</strong></td>
+<td style="text-align: left;">The physical adapter name reference to the logical adapter for the LPAR.</td>
+<td style="text-align: left;">10Gb-A</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card1.port</strong></td>
-<td align="left">The port number for the NIC.</td>
-<td align="left">0</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card1.port</strong></td>
+<td style="text-align: left;">The port number for the NIC.</td>
+<td style="text-align: left;">0</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card1.dev_num</strong></td>
-<td align="left">The logical device number for the NIC. In hex format.</td>
-<td align="left">0x0100</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card1.dev_num</strong></td>
+<td style="text-align: left;">The logical device number for the NIC. In hex format.</td>
+<td style="text-align: left;">0x0100</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card2.name</strong></td>
-<td align="left"><b>(Optional)</b> The logical name of a second Network Interface Card<br /> (NIC) within the HMC. An arbitrary value that is human-readable<br /> that points to the NIC.</td>
-<td align="left">SYS-NIC-02</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card2.name</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The logical name of a second Network Interface Card<br /> (NIC) within the HMC. An arbitrary value that is human-readable<br /> that points to the NIC.</td>
+<td style="text-align: left;">SYS-NIC-02</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card2.adapter</strong></td>
-<td align="left"><b>(Optional)</b> The physical adapter name of a second NIC.</td>
-<td align="left">10Gb-B</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card2.adapter</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The physical adapter name of a second NIC.</td>
+<td style="text-align: left;">10Gb-B</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card2.port</strong></td>
-<td align="left"><b>(Optional)</b> The port number for a second NIC.</td>
-<td align="left">1</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card2.port</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The port number for a second NIC.</td>
+<td style="text-align: left;">1</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.networking.nic.card2.dev_num</strong></td>
-<td align="left"><b>(Optional)</b> The logical device number for a second NIC. In hex format.</td>
-<td align="left">0x0001</td>
+<td style="text-align: left;"><strong>lpar.networking.nic.card2.dev_num</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The logical device number for a second NIC. In hex format.</td>
+<td style="text-align: left;">0x0001</td>
 </tr>
 </tbody>
 </table>
@@ -360,66 +363,66 @@
 <table>
 <thead>
 <tr>
-<th align="left"><strong>Variable Name</strong></th>
-<th align="left"><strong>Description</strong></th>
-<th align="left"><strong>Example</strong></th>
+<th style="text-align: left;"><strong>Variable Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+<th style="text-align: left;"><strong>Example</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><strong>lpar.storage_group_1.name</strong></td>
-<td align="left">The name of the storage group that will be attached to the LPAR.</td>
-<td align="left">OCP-storage-01</td>
+<td style="text-align: left;"><strong>lpar.storage_group_1.name</strong></td>
+<td style="text-align: left;">The name of the storage group that will be attached to the LPAR.</td>
+<td style="text-align: left;">OCP-storage-01</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_1.type</strong></td>
-<td align="left">Storage type. FCP is the only tested type as of now.</td>
-<td align="left">fcp</td>
+<td style="text-align: left;"><strong>lpar.storage_group_1.type</strong></td>
+<td style="text-align: left;">Storage type. FCP is the only tested type as of now.</td>
+<td style="text-align: left;">fcp</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_1.storage_wwpn</strong></td>
-<td align="left">World-wide port numbers for storage group. Use provided list formatting.</td>
-<td align="left">500708680235c3f0<br />500708680235c3f1<br />500708680235c3f2<br />500708680235c3f3</td>
+<td style="text-align: left;"><strong>lpar.storage_group_1.storage_wwpn</strong></td>
+<td style="text-align: left;">World-wide port numbers for storage group. Use provided list formatting.</td>
+<td style="text-align: left;">500708680235c3f0<br />500708680235c3f1<br />500708680235c3f2<br />500708680235c3f3</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_1.dev_num</strong></td>
-<td align="left">The logical device number of the Host Bus Adapter (HBA) for the storage group.</td>
-<td align="left">C001</td>
+<td style="text-align: left;"><strong>lpar.storage_group_1.dev_num</strong></td>
+<td style="text-align: left;">The logical device number of the Host Bus Adapter (HBA) for the storage group.</td>
+<td style="text-align: left;">C001</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_1.lun_name</strong></td>
-<td align="left">The Logical Unit Numbers (LUN) that points to a specific virtual disk behind the WWPN.</td>
-<td align="left">4200569309ahhd240000000000000c001</td>
+<td style="text-align: left;"><strong>lpar.storage_group_1.lun_name</strong></td>
+<td style="text-align: left;">The Logical Unit Numbers (LUN) that points to a specific virtual disk behind the WWPN.</td>
+<td style="text-align: left;">4200569309ahhd240000000000000c001</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2.name</strong></td>
-<td align="left"><b>(Optional)</b> The name of the storage group that will be attached to the LPAR.</td>
-<td align="left">OCP-storage-01</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2.name</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The name of the storage group that will be attached to the LPAR.</td>
+<td style="text-align: left;">OCP-storage-01</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2.auto_config</strong></td>
-<td align="left"><b>(Optional)</b> Attempt to automate the addition of the disk space to the existing logical<br /> volume. Check out roles/configure_storage/tasks/main.yaml to ensure this will work<br /> properly with your setup.</td>
-<td align="left">True</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2.auto_config</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> Attempt to automate the addition of the disk space to the existing logical<br /> volume. Check out roles/configure_storage/tasks/main.yaml to ensure this will work<br /> properly with your setup.</td>
+<td style="text-align: left;">True</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2.type</strong></td>
-<td align="left"><b>(Optional)</b> Storage type. FCP is the only tested type as of now.</td>
-<td align="left">fcp</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2.type</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> Storage type. FCP is the only tested type as of now.</td>
+<td style="text-align: left;">fcp</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2_.storage_wwpn</strong></td>
-<td align="left"><b>(Optional)</b> World-wide port numbers for storage group. Use provided list formatting.</td>
-<td align="left">500708680235c3f0<br />500708680235c3f1<br />500708680235c3f2<br />500708680235c3f3</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2_.storage_wwpn</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> World-wide port numbers for storage group. Use provided list formatting.</td>
+<td style="text-align: left;">500708680235c3f0<br />500708680235c3f1<br />500708680235c3f2<br />500708680235c3f3</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2_.dev_num</strong></td>
-<td align="left"><b>(Optional)</b> The logical device number of the Host Bus Adapter (HBA) for the storage group.</td>
-<td align="left">C001</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2_.dev_num</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> The logical device number of the Host Bus Adapter (HBA) for the storage group.</td>
+<td style="text-align: left;">C001</td>
 </tr>
 <tr>
-<td align="left"><strong>lpar.storage_group_2_.lun_name</strong></td>
-<td align="left"><b>(Optional)</b> he Logical Unit Numbers (LUN) that points to a specific virtual disk<br /> behind the WWPN.</td>
-<td align="left">4200569309ahhd240000000000000c001</td>
+<td style="text-align: left;"><strong>lpar.storage_group_2_.lun_name</strong></td>
+<td style="text-align: left;"><b>(Optional)</b> he Logical Unit Numbers (LUN) that points to a specific virtual disk<br /> behind the WWPN.</td>
+<td style="text-align: left;">4200569309ahhd240000000000000c001</td>
 </tr>
 </tbody>
 </table>
@@ -463,14 +466,15 @@
     
   </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme_extra.js" defer></script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
             SphinxRtdTheme.Navigation.enable(true);
-        };
+        });
     </script>
 
 </body>
