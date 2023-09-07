@@ -1,6 +1,6 @@
 site_name: Ansible-Automated OpenShift Provisioning on KVM on IBM zSystems / LinuxONE
 repo_url: https://github.com/jacobemery/Ansible-OpenShift-Provisioning
-site_url: https://jacobemery.github.io/Ansible-OpenShift-Provisioning/docs-deploy
+site_url: https://jacobemery.github.io/Ansible-OpenShift-Provisioning/docs-deploy/
 edit_uri: edit/main/docs
 
 nav: 
