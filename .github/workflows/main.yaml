@@ -25,6 +25,13 @@ jobs:
       - name: Install mkdocs
         run: pip install mkdocs
 
+      - name: Setup Git for GitHub Pages
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "github-actions-bot@example.com"
+          git fetch origin gh-pages-test:gh-pages-test
+          git reset --soft gh-pages-test
+
       - name: Deploy docs
         run: python3 -m mkdocs gh-deploy --remote-branch gh-pages-test
         env:
