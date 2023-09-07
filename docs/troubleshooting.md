@@ -6,7 +6,7 @@ If you encounter errors while running the main playbook, there are a few things 
 * Google the specific error message.  
 * Re-run the role with the verbosity '-v' option to get more debugging information (more v's give more info). For example:  
 ```
-ansible-playbook playbooks/0_setup.yaml -vvv
+ansible-playbook playbooks/0_setup.yaml -vv
 ```
 * Use tags
   * To be more selective with what parts of a playbook are run, use tags. 
