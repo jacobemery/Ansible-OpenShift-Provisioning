@@ -15,9 +15,9 @@ ansible-playbook playbooks/0_setup.yaml -vvv
   * This is especially helpful for troubleshooting. You can add in tags under the `name` parameter for individual tasks you'd like to run. 
   * Here's an example of using a tag:
 ```
-ansible-playbook playbooks/setup_kvm_host.yaml --tags "section_2,section_3"
+ansible-playbook playbooks/setup_kvm_host.yaml --tags "section_1,section_2"
 ```
-  * This runs only the parts of the [setup_kvm_host playbook](https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/3_setup_kvm_host.yaml) marked with tags section_2 and section_3. To use more than one tag, they must be quoted (single or double) and comma-separated (with or without spaces between).
+  * This runs only the parts of the [setup_kvm_host playbook](https://github.com/IBM/Ansible-OpenShift-Provisioning/blob/main/playbooks/3_setup_kvm_host.yaml) marked with tags section_1 and section_2. To use more than one tag, they must be quoted (single or double) and comma-separated (with or without spaces between).
 * E-mail Jacob Emery at jacob.emery@ibm.com
 * If it's a problem with an OpenShift verification step: 
     * Open the cockpit to monitor the VMs. 
